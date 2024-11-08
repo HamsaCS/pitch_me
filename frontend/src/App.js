@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PaymentPage from './pages/PaymentPage'; // If it's inside a 'pages' folder
+
  // Adjust the path based on your folder structure
 
 import {
@@ -96,6 +97,7 @@ const App = () => {
         </Elements>
       )}
       <Routes>
+      <Route path="/Best Pitches" element={<BestSellingPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
@@ -335,5 +337,6 @@ const App = () => {
     </BrowserRouter>
   );
 };
+
 
 export default App;
