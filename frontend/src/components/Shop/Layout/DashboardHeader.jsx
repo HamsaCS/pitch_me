@@ -11,12 +11,14 @@ const DashboardHeader = () => {
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
       <div>
-        <Link to="/dashboard">
-          <img
-            src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-            alt=""
-          />
-        </Link>
+      <Link to="/dashboard">
+  <img
+    src="/logo.png"
+    alt="Zomato Logo"
+    style={{ width: "110px", height: "auto" }} // Adjust size as needed
+  />
+</Link>
+
       </div>
       <div className="flex items-center">
         <div className="flex items-center mr-4">

@@ -40,7 +40,7 @@ const DashboardSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            All Investments
           </h5>
         </Link>
       </div>
@@ -53,7 +53,7 @@ const DashboardSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            All Pitches
           </h5>
         </Link>
       </div>
@@ -72,7 +72,7 @@ const DashboardSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Product
+            Create Pitch
           </h5>
         </Link>
       </div>
@@ -139,7 +139,7 @@ const DashboardSideBar = ({ active }) => {
               active === 8 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Shop Inbox
+            Company Inbox
           </h5>
         </Link>
       </div>

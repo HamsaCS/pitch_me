@@ -74,7 +74,7 @@ const Checkout = () => {
           cart && cart.filter((item) => item.shopId === shopId);
 
         if (isCouponValid.length === 0) {
-          toast.error("Coupon code is not valid for this shop");
+          toast.error("Dilution code is not valid for this shop");
           setCouponCode("");
         } else {
           const eligiblePrice = isCouponValid.reduce(
@@ -161,7 +161,7 @@ const ShippingInfo = ({
 }) => {
   return (
     <div className="w-full 800px:w-[95%] bg-white rounded-md p-5 pb-8">
-      <h5 className="text-[18px] font-[500]">Shipping Address</h5>
+      <h5 className="text-[18px] font-[500]">Investors Address</h5>
       <br />
       <form>
         <div className="w-full flex pb-3">
@@ -248,7 +248,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Address1</label>
+            <label className="block pb-2">Address</label>
             <input
               type="address"
               required
@@ -258,7 +258,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Address2</label>
+            <label className="block pb-2">Message for Pitcher</label>
             <input
               type="address"
               value={address2}
@@ -320,12 +320,12 @@ const CartData = ({
       </div>
       <br />
       <div className="flex justify-between">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">Platform fee:</h3>
         <h5 className="text-[18px] font-[600]">${shipping.toFixed(2)}</h5>
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">Dilution:</h3>
         <h5 className="text-[18px] font-[600]">
           - {discountPercentenge ? "$" + discountPercentenge.toString() : null}
         </h5>

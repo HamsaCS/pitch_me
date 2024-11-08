@@ -336,7 +336,57 @@ const PaymentInfo = ({
             Pay with Paypal
           </h4>
         </div>
+        <div>
+  <div className="flex w-full pb-5 border-b mb-2">
+    <div
+      className="w-[25px] h-[25px] rounded-full bg-transparent border-[3px] border-[#1d1a1ab4] relative flex items-center justify-center"
+      onClick={() => setSelect(4)} // For Pay through Metamask
+    >
+      {select === 4 ? (
+        <div className="w-[13px] h-[13px] bg-[#1d1a1acb] rounded-full" />
+      ) : null}
 
+<br></br>
+    </div>
+    <h4 className="text-[18px] pl-2 font-[600] text-[#000000b1]">
+      Pay through Metamask
+    </h4>
+  </div>
+
+  {/* Pay through Metamask */}
+  {select === 4 ? (
+    <div className="w-full flex flex-col pb-3">
+      <div className="w-full pb-3">
+        <label className="block pb-2">Metamask Address</label>
+        <input
+          type="text"
+          placeholder="Enter your Metamask address"
+          className={`${styles.input} !w-[100%] text-[#444]`}
+        />
+      </div>
+      <div className="w-full pb-3">
+        <label className="block pb-2">Amount</label>
+        <input
+          type="number"
+          placeholder="Enter amount"
+          className={`${styles.input} !w-[100%] text-[#444]`}
+        />
+      </div>
+      <div
+        className={`${styles.button} !bg-[#f63b60] text-white h-[55px] rounded-[5px] cursor-pointer text-[18px] font-[600] w-full`}
+        onClick={() => {/* Connect Metamask logic here */}}
+      >
+        Connect to Metamask
+      </div>
+      <input
+        type="submit"
+        value="Submit"
+        className={`${styles.button} !bg-[#f63b60] text-[#fff] h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] mt-3`}
+      />
+    </div>
+  ) : null}
+</div>
+<br></br>
         {/* pay with payement */}
         {select === 2 ? (
           <div className="w-full flex border-b">
@@ -388,7 +438,7 @@ const PaymentInfo = ({
             ) : null}
           </div>
           <h4 className="text-[18px] pl-2 font-[600] text-[#000000b1]">
-            Cash on Delivery
+            Cash Pyment
           </h4>
         </div>
 
@@ -419,12 +469,12 @@ const CartData = ({ orderData }) => {
       </div>
       <br />
       <div className="flex justify-between">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">Investor details:</h3>
         <h5 className="text-[18px] font-[600]">${shipping}</h5>
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">Dilution:</h3>
         <h5 className="text-[18px] font-[600]">{orderData?.discountPrice? "$" + orderData.discountPrice : "-"}</h5>
       </div>
       <h5 className="text-[18px] font-[600] text-end pt-3">

@@ -95,7 +95,7 @@ const AdminDashboardMain = () => {
               <h3
                 className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
               >
-                Total Earning
+                Total Investment
               </h3>
             </div>
             <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">$ {adminBalance}</h5>
@@ -137,7 +137,7 @@ const AdminDashboardMain = () => {
         </div>
   
         <br />
-        <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
+        <h3 className="text-[22px] font-Poppins pb-2">Latest Investments</h3>
         <div className="w-full min-h-[45vh] bg-white rounded">
           <DataGrid
             rows={row}

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PaymentPage from './pages/PaymentPage'; // If it's inside a 'pages' folder
+ // Adjust the path based on your folder structure
+
 import {
   LoginPage,
   SignupPage,
@@ -11,7 +14,6 @@ import {
   EventsPage,
   FAQPage,
   CheckoutPage,
-  PaymentPage,
   OrderSuccessPage,
   ProductDetailsPage,
   ProfilePage,
@@ -68,6 +70,7 @@ const App = () => {
     const { data } = await axios.get(`${server}/payment/stripeapikey`);
     setStripeApiKey(data.stripeApikey);
   }
+
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
@@ -104,9 +107,9 @@ const App = () => {
           path="/seller/activation/:activation_token"
           element={<SellerActivationPage />}
         />
-        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/Products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
-        <Route path="/best-selling" element={<BestSellingPage />} />
+        <Route path="/Best Pitches" element={<BestSellingPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route
@@ -151,7 +154,7 @@ const App = () => {
           }
         />
         <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
-        {/* shop Routes */}
+        {/* Shop Routes */}
         <Route path="/shop-create" element={<ShopCreatePage />} />
         <Route path="/shop-login" element={<ShopLoginPage />} />
         <Route
@@ -212,7 +215,7 @@ const App = () => {
           }
         />
         <Route
-          path="/dashboard-products"
+          path="/dashboard-Products"
           element={
             <SellerProtectedRoute>
               <ShopAllProducts />
@@ -292,15 +295,15 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
-         <Route
-          path="/admin-products"
+        <Route
+          path="/admin-Products"
           element={
             <ProtectedAdminRoute>
               <AdminDashboardProducts />
             </ProtectedAdminRoute>
           }
         />
-         <Route
+        <Route
           path="/admin-events"
           element={
             <ProtectedAdminRoute>
@@ -308,7 +311,7 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
-         <Route
+        <Route
           path="/admin-withdraw-request"
           element={
             <ProtectedAdminRoute>

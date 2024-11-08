@@ -29,6 +29,52 @@ const Faq = () => {
       <h2 className="text-3xl font-bold text-gray-900 mb-8">FAQ</h2>
       <div className="mx-auto space-y-4">
         {/* single Faq */}
+        <div className="border-b border-gray-200 pb-4">
+          <button
+            className="flex items-center justify-between w-full"
+            onClick={() => toggleTab(1)}
+          >
+            <span className="text-lg font-medium text-gray-900">
+              How can I pitch my startup to investors?
+            </span>
+            {activeTab === 1 ? (
+              <svg
+                className="h-6 w-6 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-6 w-6 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            )}
+          </button>
+          {activeTab === 1 && (
+            <div className="mt-4">
+              <p className="text-base text-gray-500">
+                You can pitch your startup by signing up on our platform, creating a profile, and submitting a detailed pitch. Make sure to include key information such as your business model, financial projections, and goals.
+              </p>
+            </div>
+          )}
+        </div>
 
         <div className="border-b border-gray-200 pb-4">
           <button
@@ -36,7 +82,7 @@ const Faq = () => {
             onClick={() => toggleTab(2)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What is your return policy?
+              What types of startups are investors interested in?
             </span>
             {activeTab === 2 ? (
               <svg
@@ -71,10 +117,7 @@ const Faq = () => {
           {activeTab === 2 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                If you're not satisfied with your purchase, we accept returns
-                within 30 days of delivery. To initiate a return, please email
-                us at support@myecommercestore.com with your order number and a
-                brief explanation of why you're returning the item.
+                Investors are typically looking for startups with a scalable business model, innovative ideas, and a clear growth strategy. Technology, healthcare, and green energy are currently popular sectors.
               </p>
             </div>
           )}
@@ -86,7 +129,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I track my order?
+              How can investors connect with entrepreneurs?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -121,9 +164,7 @@ const Faq = () => {
           {activeTab === 3 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can track your order by clicking the tracking link in your
-                shipping confirmation email, or by logging into your account on
-                our website and viewing the order details.
+                Investors can browse through pitches submitted by entrepreneurs and directly message the ones they are interested in. You can also request meetings to discuss potential funding opportunities.
               </p>
             </div>
           )}
@@ -135,7 +176,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I contact customer support?
+              Can I update my pitch after submission?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -170,9 +211,7 @@ const Faq = () => {
           {activeTab === 4 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can contact our customer support team by emailing us at
-                support@myecommercestore.com, or by calling us at (555) 123-4567
-                between the hours of 9am and 5pm EST, Monday through Friday.
+                Yes, you can update your pitch anytime by logging into your account. You can add new information, update your business plan, and make any changes to your financials.
               </p>
             </div>
           )}
@@ -184,7 +223,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Can I change or cancel my order?
+              How can I trust the legitimacy of an investor?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -219,10 +258,7 @@ const Faq = () => {
           {activeTab === 5 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Unfortunately, once an order has been placed, we are not able to
-                make changes or cancellations. If you no longer want the items
-                you've ordered, you can return them for a refund within 30 days
-                of delivery.
+                Our platform verifies investors by checking their profiles, past investments, and professional credentials. You can also check reviews and ratings from other entrepreneurs they have worked with.
               </p>
             </div>
           )}
@@ -234,7 +270,7 @@ const Faq = () => {
             onClick={() => toggleTab(6)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Do you offer international shipping?
+              Is there a fee to pitch my startup?
             </span>
             {activeTab === 6 ? (
               <svg
@@ -269,55 +305,7 @@ const Faq = () => {
           {activeTab === 6 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Currently, we only offer shipping within the United States.
-              </p>
-            </div>
-          )}
-        </div>
-
-        <div className="border-b border-gray-200 pb-4">
-          <button
-            className="flex items-center justify-between w-full"
-            onClick={() => toggleTab(7)}
-          >
-            <span className="text-lg font-medium text-gray-900">
-              What payment methods do you accept?
-            </span>
-            {activeTab === 7 ? (
-              <svg
-                className="h-6 w-6 text-gray-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-6 w-6 text-gray-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            )}
-          </button>
-          {activeTab === 7 && (
-            <div className="mt-4">
-              <p className="text-base text-gray-500">
-                We accept visa,mastercard,paypal payment method also we have
-                cash on delivery system.
+                No, pitching your startup on our platform is free. We believe in supporting entrepreneurs by providing them access to investors without any barriers.
               </p>
             </div>
           )}

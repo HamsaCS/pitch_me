@@ -23,7 +23,7 @@ const DashboardHero = () => {
   const availableBalance = seller?.availableBalance.toFixed(2);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Investment ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
@@ -142,7 +142,7 @@ const DashboardHero = () => {
         </div>
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
+      <h3 className="text-[22px] font-Poppins pb-2">Latest Investments</h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
       <DataGrid
         rows={row}
