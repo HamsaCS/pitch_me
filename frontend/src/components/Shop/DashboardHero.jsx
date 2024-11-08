@@ -137,7 +137,7 @@ const DashboardHero = () => {
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{products && products.length}</h5>
           <Link to="/dashboard-products">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Products</h5>
+            <h5 className="pt-4 pl-2 text-[#077f9c]">View Pitched Ideas</h5>
           </Link>
         </div>
       </div>
