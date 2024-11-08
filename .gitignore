@@ -1,0 +1,6 @@
+# In the main .gitignore
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+frontend/public/23363-360.mp4
+frontend/public/money_flyu.mp4
