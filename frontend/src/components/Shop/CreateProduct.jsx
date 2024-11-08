@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../redux/actions/product";
+import { createProduct, getAllProductsShop } from "../../redux/actions/product";
 import { categoriesData } from "../../static/data";
 import { toast } from "react-toastify";
 
 const CreateProduct = () => {
   const { seller } = useSelector((state) => state.seller);
-  const { success, error } = useSelector((state) => state.products);
+  const { success, error, products } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,6 +20,20 @@ const CreateProduct = () => {
   const [originalPrice, setOriginalPrice] = useState();
   const [discountPrice, setDiscountPrice] = useState();
   const [stock, setStock] = useState();
+  const [hasProduct, setHasProduct] = useState(false);
+
+  // Fetch products for the seller and check if a product already exists
+  useEffect(() => {
+    dispatch(getAllProductsShop(seller._id));
+  }, [dispatch, seller._id]);
+
+  // If a product exists for the seller, set hasProduct to true
+  useEffect(() => {
+    if (products.length > 0) {
+      setHasProduct(true);
+      toast.info("You already have a product.");
+    }
+  }, [products]);
 
   useEffect(() => {
     if (error) {
@@ -80,8 +94,13 @@ const CreateProduct = () => {
     );
   };
 
+  // If the seller already has a product, show a message and don't render the form
+  if (hasProduct) {
+    return <div>You can only create one pitch.</div>;
+  }
+
   return (
-    <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
+    <div className="w-[90%] 800px:w-[50%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
       <h5 className="text-[30px] font-Poppins text-center">Create Product</h5>
       {/* create product form */}
       <form onSubmit={handleSubmit}>
@@ -162,7 +181,7 @@ const CreateProduct = () => {
         <br />
         <div>
           <label className="pb-2">
-            Ask (With Dilution) <span className="text-red-500">*</span>
+            Discounted Price <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -170,21 +189,19 @@ const CreateProduct = () => {
             value={discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-            placeholder="Enter your product price with discount..."
+            placeholder="Enter your product discounted price..."
           />
         </div>
         <br />
         <div>
-          <label className="pb-2">
-            Pithch liked <span className="text-red-500">*</span>
-          </label>
+          <label className="pb-2">Stock</label>
           <input
             type="number"
             name="price"
             value={stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Enter your product stock..."
+            placeholder="Enter product stock..."
           />
         </div>
         <br />
@@ -210,18 +227,18 @@ const CreateProduct = () => {
                   src={i}
                   key={i}
                   alt=""
-                  className="h-[120px] w-[120px] object-cover m-2"
+                  className="h-[120px] w-[120px] object-cover m-2 rounded-[4px]"
                 />
               ))}
           </div>
-          <br />
-          <div>
-            <input
-              type="submit"
-              value="Create"
-              className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
+        </div>
+        <br />
+        <div>
+          <input
+            type="submit"
+            value="Create"
+            className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
         </div>
       </form>
     </div>
