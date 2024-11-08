@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PaymentPage from './pages/PaymentPage'; // If it's inside a 'pages' folder
+import PaymentPage from "./pages/PaymentPage"; // If it's inside a 'pages' folder
+import Room from "./pages/Room";
 
- // Adjust the path based on your folder structure
+// Adjust the path based on your folder structure
 
 import {
   LoginPage,
@@ -47,7 +48,7 @@ import {
   AdminDashboardOrders,
   AdminDashboardProducts,
   AdminDashboardEvents,
-  AdminDashboardWithdraw
+  AdminDashboardWithdraw,
 } from "./routes/AdminRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -97,7 +98,8 @@ const App = () => {
         </Elements>
       )}
       <Routes>
-      <Route path="/Best Pitches" element={<BestSellingPage />} />
+        <Route path="/Best Pitches" element={<BestSellingPage />} />
+        <Route path="/room/:roomId" element={<Room />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
@@ -337,6 +339,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
 
 export default App;
