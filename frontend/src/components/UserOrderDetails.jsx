@@ -54,7 +54,7 @@ const UserOrderDetails = () => {
   
   const refundHandler = async () => {
     await axios.put(`${server}/order/order-refund/${id}`,{
-      status: "Processing refund"
+      status: "Processing Commision"
     }).then((res) => {
        toast.success(res.data.message);
     dispatch(getAllOrdersOfUser(user._id));
@@ -227,7 +227,7 @@ const UserOrderDetails = () => {
             data?.status === "Delivered" && (
               <div className={`${styles.button} text-white`}
               onClick={refundHandler}
-              >Give a Refund</div>
+              >Give a commision</div>
             )
            }
         </div>

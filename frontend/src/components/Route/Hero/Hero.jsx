@@ -26,24 +26,27 @@ const Hero = () => {
         }}
       />
     
-      <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
-        <h1
-          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#020202] font-[600] capitalize`}
-        >
-          Best Pitches in   <br />THE OCEAN OF PITCHES
-        </h1>
-        <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#030303]">
-        PITCH ME is a dynamic platform designed to connect entrepreneurs with investors, providing a space where innovative ideas can be showcased. Inspired by the concept of Shark Tank, entrepreneurs can present their ventures, while investors have the opportunity to evaluate, invest in, and acquire stakes in promising projects. This platform fosters collaboration and growth, offering a streamlined process for turning visionary ideas into successful businesses.{" "}
-          <br />BE AN OUTBOXER
-        </p>
-        <Link to="/products" className="inline-block">
-            <div className={`${styles.button} mt-5`}>
-                 <span className="text-[#ebe8e8] font-[Poppins] text-[18px]">
-                    See Pitch
-                 </span>
-            </div>
-        </Link>
-      </div>
+    <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
+  <h1
+    className={`text-[36px] 800px:text-[61px] font-bold capitalize text-white whitespace-nowrap`}
+    style={{
+      textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4), 4px 4px 8px rgba(0, 0, 0, 0.2)"
+    }}
+  >
+    Best Pitches in<br></br>THE OCEAN OF PITCHES
+  </h1>
+  <p className="pt-5 text-[16px] font-[Poppins] font-bold text-white">
+  </p>
+
+  <Link to="/products" className="inline-block">
+    <div className={`${styles.button} mt-5`}>
+      <span className="text-[#ebe8e8] font-[Poppins] text-[18px]">
+        See Pitch
+      </span>
+    </div>
+  </Link>
+</div>
+
     </div>
   );
 };

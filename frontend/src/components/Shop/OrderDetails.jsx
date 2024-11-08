@@ -169,19 +169,19 @@ const OrderDetails = () => {
         </select>
       )}
       {
-        data?.status === "Processing refund" || data?.status === "Refund Success" ? (
+        data?.status === "Processing commision" || data?.status === "Refund Success" ? (
           <select value={status} 
        onChange={(e) => setStatus(e.target.value)}
        className="w-[200px] mt-2 border h-[35px] rounded-[5px]"
       >
         {[
-            "Processing refund",
+            "Processing commision",
             "Refund Success",
           ]
             .slice(
               [
-                "Processing refund",
-                "Refund Success",
+                "Processing commision",
+                "commision Success",
               ].indexOf(data?.status)
             )
             .map((option, index) => (
@@ -195,7 +195,7 @@ const OrderDetails = () => {
 
       <div
         className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#E94560] font-[600] !h-[45px] text-[18px]`}
-        onClick={data?.status !== "Processing refund" ? orderUpdateHandler : refundOrderUpdateHandler}
+        onClick={data?.status !== "Processing commision" ? orderUpdateHandler : refundOrderUpdateHandler}
       >
         Update Status
       </div>

@@ -40,9 +40,9 @@ const TrackOrder = () => {
           </h1>
         ) : data?.status === "Delivered" ? (
           <h1 className="text-[20px]">Your Investment is successful!</h1>
-        ) : data?.status === "Processing refund" ? (
+        ) : data?.status === "Processing commision" ? (
           <h1 className="text-[20px]">Your refund is processing!</h1>
-        ) : data?.status === "Refund Success" ? (
+        ) : data?.status === "commision Success" ? (
           <h1 className="text-[20px]">Your Refund is success!</h1>
         ) : null}
       </>
