@@ -13,7 +13,7 @@ const SuggestedProduct = ({ data }) => {
     allProducts && allProducts.filter((i) => i.category === data.category);
     setProductData(d);
   }, []);
-
+console.log("lik")
   return (
     <div>
       {data ? (

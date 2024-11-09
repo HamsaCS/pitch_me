@@ -22,7 +22,7 @@ const AllProducts = () => {
     dispatch(deleteProduct(id));
     window.location.reload();
   };
-
+console.log("s")
   const columns = [
     { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
     {
