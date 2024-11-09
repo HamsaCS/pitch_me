@@ -18,6 +18,7 @@ const ProductsPage = () => {
       const d =
       allProducts && allProducts.filter((i) => i.status === "approved")
       setData(d);
+      console.log(d)
     //    window.scrollTo(0,0);
   }, [allProducts]);
   return (

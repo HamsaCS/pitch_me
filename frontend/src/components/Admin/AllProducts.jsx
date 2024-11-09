@@ -20,7 +20,7 @@ const AllProducts = () => {
     })
   }, []);
 
-  console.log(data)
+  // console.log(data)
 
   const columns = [
     { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
