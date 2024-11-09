@@ -21,10 +21,8 @@ const Room = () => {
       
     });
   };
-
   return (
-    <div ref={meeting} style={{width:"200vh",height:"100vh"}}>
-      
+    <div ref={meeting} style={{width:"200vh",height:"100vh"}}>  
     </div>
   );
 };
