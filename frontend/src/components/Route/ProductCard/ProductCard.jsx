@@ -90,12 +90,12 @@ const ProductCard = ({ data,isEvent }) => {
     ? data.originalPrice
     : data.discountPrice}
 </h5>
-<h4 className={`${styles.price}`}>
+{/* <h4 className={`${styles.price}`}>
   {data.originalPrice ? data.originalPrice + " " : null}
-</h4>
+</h4> */}
             </div>
             <span className="font-[400] text-[17px] text-[#68d284]">
-              {data?.sold_out} connected   
+              {data?.sold_out}    
             </span>
           </div>
         </Link>
