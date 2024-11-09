@@ -13,7 +13,7 @@ const Room = () => {
       scenario:{
         mode:ZegoUIKitPrebuilt.OneONoneCall
       },
-      showScreenSharingButton:false,
+      showScreenSharingButton:true,
       sharedLinks:[{
         name:"copy link",
         url:window.location.href
@@ -21,9 +21,9 @@ const Room = () => {
       
     });
   };
-  // console.log({roomId});
+
   return (
-    <div ref={meeting} style={{width:"100vh",height:"100vh"}}>
+    <div ref={meeting} style={{width:"200vh",height:"100vh"}}>
       
     </div>
   );
