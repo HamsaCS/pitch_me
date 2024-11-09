@@ -23,7 +23,7 @@ const Room = () => {
   };
   // console.log({roomId});
   return (
-    <div ref={meeting} style={{width:"100vh",height:"100vh"}}>
+    <div ref={meeting} style={{width:"220vh",height:"100vh"}}>
       
     </div>
   );

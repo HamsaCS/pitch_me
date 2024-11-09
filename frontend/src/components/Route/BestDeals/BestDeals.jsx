@@ -23,10 +23,14 @@ const BestDeals = () => {
   const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
+    // const d =
+    //   allProductsData && allProductsData.filter((i) => i.status === "approved")
+    //   setData(d);
+    //   console.log(d)
     // Sort products by sold_out property and select top 5
-    const allProductsData = allProducts ? [...allProducts] : [];
+    const allProductsData = allProducts ? [...allProducts.filter((i) => i.status === "approved")] : [];
     const sortedData = allProductsData.sort((a, b) => b.sold_out - a.sold_out);
-    const firstFive = sortedData.slice(0, 5);
+    const firstFive = sortedData.slice(0, 3);
     setData(firstFive);
   }, [allProducts]);
 
