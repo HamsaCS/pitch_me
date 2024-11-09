@@ -18,7 +18,6 @@ const Room = () => {
         name:"copy link",
         url:window.location.href
       }]
-      
     });
   };
   return (
