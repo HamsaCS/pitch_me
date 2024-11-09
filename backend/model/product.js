@@ -62,6 +62,10 @@ const productSchema = new mongoose.Schema({
   ratings: {
     type: Number,
   },
+  status: {
+    type: String,
+    default: "pending",
+  },
   shopId: {
     type: String,
     required: true,
@@ -74,10 +78,7 @@ const productSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  status: {
-    type: String,
-    default: "pending",
-  },
+
   createdAt: {
     type: Date,
     default: Date.now(),
